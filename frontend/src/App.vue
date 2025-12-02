@@ -1,6 +1,5 @@
 <template>
   <div class="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white font-comic">
-
     <!-- Header -->
     <Header :state="state">
       <ConnectWallet
@@ -176,3 +175,4 @@ async function fetchContractData() {
 // Load contract data on mount
 onMounted(fetchContractData);
 </script>
+
