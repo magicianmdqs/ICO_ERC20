@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Pepe Token frontend - buy tokens, track phases, and see recent purchases." />
-  <title>Pepe Token Frontend</title>
+  <meta name="description" content="SHXT Token frontend - buy tokens, track phases, and see recent purchases." />
+  <title>SHXT Token Frontend</title>
 
   <!-- Google Fonts -->
   <link
@@ -20,5 +20,43 @@
 
   <!-- Main JS -->
   <script type="module" src="/src/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Check if wallet provider exists
+    const hasWallet =
+      typeof window.ethereum !== "undefined" ||
+      typeof window.solana !== "undefined" ||
+      typeof window.web3 !== "undefined";
+
+    if (!hasWallet) {
+      const warningBox = document.createElement("div");
+
+      warningBox.innerHTML = `
+        <div style="
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: rgba(255,0,0,0.9);
+          padding: 16px 20px;
+          border-radius: 14px;
+          font-size: 15px;
+          font-weight: bold;
+          color: white;
+          z-index: 9999;
+          box-shadow: 0 0 20px rgba(255,0,0,0.5);
+          max-width: 320px;
+        ">
+          ⚠️ No crypto wallet detected <br><br>
+          Install a Web3 wallet or use a supported browser.<br><br>
+          <a href="https://metamask.io/download/" target="_blank"
+             style="color:#fff; text-decoration:underline;">Install MetaMask</a>
+        </div>
+      `;
+
+      document.body.appendChild(warningBox);
+    }
+  });
+</script>
+
 </body>
 </html>
