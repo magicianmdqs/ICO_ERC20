@@ -24,10 +24,11 @@ import { ref, onMounted } from "vue";
 // Example news/project details
 const news = ref([
   "🔥 Pre-Launch Sale Live!",
-  "💰 Funding",
+    "HOODI RPC",
   "🚀 Project Pre-Sale",
-  "📢 Marketing Campaign Started",
+  "Make Sure You Have Hoodi ETH",
   "👨‍💻 AirDrop will be among early apes.",
+  "Time to own some SHXT!",
 ]);
 
 const ticker = ref(null);

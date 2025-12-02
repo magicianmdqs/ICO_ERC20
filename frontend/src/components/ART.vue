@@ -8,8 +8,8 @@ import { onMounted, ref, onBeforeUnmount } from "vue";
 const canvas = ref(null);
 let ctx, particles = [], animationId;
 
-const PARTICLE_COUNT = 90;
-const MAX_DISTANCE = 140;
+const PARTICLE_COUNT = 75;
+const MAX_DISTANCE = 130;
 
 class Particle {
   constructor(w, h) {
