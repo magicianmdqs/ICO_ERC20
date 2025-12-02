@@ -10,13 +10,11 @@
       connecting ? 'opacity-60 cursor-not-allowed' : ''
     ]"
   >
-    <!-- Text based on connection state -->
     <span v-if="connecting">Connecting...</span>
     <span v-else-if="connected">{{ short(account) }}</span>
     <span v-else>Connect Wallet</span>
   </button>
 </template>
-
 
 <script setup>
 import { ref } from "vue";
@@ -26,26 +24,25 @@ const connected = ref(false);
 const account = ref("");
 const connecting = ref(false);
 
-// Display shortened wallet address
 function short(addr) {
   if (!addr) return "";
   return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
 }
 
 async function connect() {
-  if (connecting.value) return; // Prevent spam click
+  if (connecting.value) return;
 
   try {
     connecting.value = true;
 
     const signer = await getSigner();
-    if (!signer) throw new Error("No signer returned.");
-
     const addr = await signer.getAddress();
-    if (!addr) throw new Error("Failed to get wallet address.");
 
     account.value = addr;
     connected.value = true;
+
+    // 🔥 Reload to refresh app state after wallet connects
+    window.location.reload();
 
   } catch (e) {
     console.error("Wallet connection failed:", e);
@@ -53,5 +50,16 @@ async function connect() {
   } finally {
     connecting.value = false;
   }
+}
+
+
+// 🔥 Auto-detect wallet on page load (after reload)
+if (window.ethereum) {
+  window.ethereum.request({ method: "eth_accounts" }).then(accounts => {
+    if (accounts.length > 0) {
+      account.value = accounts[0];
+      connected.value = true;
+    }
+  });
 }
 </script>
