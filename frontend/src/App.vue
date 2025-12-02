@@ -92,6 +92,8 @@
       </div>
     </section>
 
+    <Footer/>
+
   </div>
 </template>
 
@@ -109,6 +111,7 @@ import RecentPurchases from "./components/RecentPurchases.vue";
 import Shares from "./components/Shares.vue";
 import NewsTracker from "./components/NewTracker.vue";
 import ART from "./components/ART.vue";
+import Footer from "./components/Footer.vue"
 
 // Wallet state
 const account = ref("");
