@@ -5,14 +5,14 @@
 
     <!-- Text overlay -->
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center select-none">
-      <p class="text-gray-300 text-lg md:text-xl font-semibold relative inline-block">
-        Created without
+      <p class="text-gray-300 text-xs md:text-sm font-semibold relative inline-block">
+        Created without Love by
         <span
-          class="text-green-400 font-bold neon-text relative cursor-default"
+          class="text-green-400 font-bold md:text-xl neon-text relative cursor-default"
           @mouseenter="hover = true"
           @mouseleave="hover = false"
         >
-          Love by Magician
+          Magician
           <span
             v-for="n in sparkles"
             :key="n.id"

@@ -77,7 +77,7 @@
             development.
           </p>
           <ul class="list-disc list-inside text-gray-400 space-y-1">
-            <li><strong>Total Supply:</strong> 2,000,000,000 SHXT</li>
+            <li><strong>Total Supply:</strong> 1,000,000,000 SHXT</li>
             <li><strong>Pre-Launch Sale:</strong> 40% of total supply</li>
             <li><strong>Public Sale:</strong> 50% available</li>
             <li><strong>Marketing & Partnerships:</strong> 5%</li>
